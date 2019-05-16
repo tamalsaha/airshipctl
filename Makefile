@@ -75,7 +75,7 @@ update-golden:
 .PHONY: plugin
 plugin: $(PLUGIN_INT)
 	@for plugin in $(PLUGIN_EXT); do $(MAKE) -C $${plugin}; done
-	@go run $(BINDATA) $(PLUGIN_BIN)
+	@go run $(BINDATA) $(PLUGIN_BIN)/*
 
 $(PLUGIN_BIN)/%.so: $(PLUGIN_DIR)/*/%/*.go
 	@go build -buildmode=plugin -o $@ $^
