@@ -20,6 +20,7 @@ How to do plugins while also having a single binary
     compiled with the exact same packages as the executable
   - There's a single executable binary, but it depends on multiple shared
     objects to function
+  - Doesn't work with static compilation
 
 ### 2. Lots of binaries and use [kubectl's strategy][kubectl-plugin]
 #### Implementation
@@ -31,6 +32,7 @@ How to do plugins while also having a single binary
     in the right place
   - Plugins are managed indepenedently airshipctl, and can be written in any
     language
+  - airshipctl can be statically compiled
 #### Cons
   - There's multiple binaries
   - The plugins can't take advantage of package code provided by airshipctl
